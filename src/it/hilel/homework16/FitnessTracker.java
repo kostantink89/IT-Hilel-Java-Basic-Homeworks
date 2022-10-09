@@ -2,79 +2,90 @@ package it.hilel.homework16;
 
 
 public class FitnessTracker {
-    public final int CURRENT_YEAR = 2022;
-
-    public String lastName;
-    public int weight;
-    public String bloodPressure;
-    public int numberOfStepsPerDay;
-
-
-    private String firstName;
-
-    private int yearOfBirth;
-    private String email;
-    private String phoneNumber;
+    private final int CURRENT_YEAR = 2022;
+    private final String FIRST_NAME;
+    private String lastName;
+    private final int YEAR_OF_BIRTH;
+    private final String PHONE_NUMBER;
+    private final String EMAIL;
+    private int weight;
+    private String bloodPressure;
+    private int numberOfStepsPerDay;
 
     private int age;
 
 
-    public FitnessTracker(String firstName, String lastName, int yearOfBirth, String email, String phoneNumber,
+    public FitnessTracker(String firstName, String lastName, int yearOfBirth, String phoneNumber, String email,
                           int weight, String bloodPressure, int numberOfStepsPerDay) {
-        this.firstName = firstName;
+        this.FIRST_NAME = firstName;
         this.lastName = lastName;
-        this.yearOfBirth = yearOfBirth;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
+        this.YEAR_OF_BIRTH = yearOfBirth;
+        this.EMAIL = email;
+        this.PHONE_NUMBER = phoneNumber;
         this.weight = weight;
         this.bloodPressure = bloodPressure;
         this.numberOfStepsPerDay = numberOfStepsPerDay;
 
-
     }
 
     public String getFirstName() {
-        return firstName;
+        return FIRST_NAME;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getYearOfBirth() {
-        return yearOfBirth;
-    }
-
-    public void setYearOfBirth(int yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+        return YEAR_OF_BIRTH;
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return PHONE_NUMBER;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public String getEmail() {
+        return EMAIL;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public String getBloodPressure() {
+        return bloodPressure;
+    }
+
+    public void setBloodPressure(String bloodPressure) {
+        this.bloodPressure = bloodPressure;
+    }
+
+    public int getNumberOfStepsPerDay() {
+        return numberOfStepsPerDay;
+    }
+
+    public void setNumberOfStepsPerDay(int numberOfStepsPerDay) {
+        this.numberOfStepsPerDay = numberOfStepsPerDay;
     }
 
     public int getAge() {
         return CURRENT_YEAR - getYearOfBirth();
+
     }
 
-
     public void printAccountInfo() {
-        System.out.println("\nFirst Name: " + getFirstName() +   "\nLast Name: " + this.lastName +
-               "\nYear of birth: " + this.yearOfBirth + "\nAge: " + getAge() +" years old" + "\nEmail: " + getEmail() +
-                "\nPhone Number: "+ getPhoneNumber() + "\nWeight: " + this.weight + "\nPressure: " +
-                 this.bloodPressure +"\nNumber of steps: " + this.numberOfStepsPerDay);
+        System.out.println("\nFirst Name: " + getFirstName() + "\nLast Name: " + getLastName() +
+                "\nYear of birth: " + getYearOfBirth() + "\nAge: " + getAge() + " years old" + "\nEmail: " + getEmail() +
+                "\nPhone Number: " + getPhoneNumber() + "\nWeight: " + getWeight() + "\nPressure: " +
+                getBloodPressure() + "\nNumber of steps: " + getNumberOfStepsPerDay());
     }
 
 
